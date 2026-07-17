@@ -1,0 +1,37 @@
+{
+  "run": {
+    "run_id": "R012",
+    "baseline_scen": "owe_baseline.scen",
+    "replicates": 3,
+    "notes": "24-ship raid, two axes, doctrine interceptor stocks, radars active"
+  },
+  "raid": {
+    "owe_dbid": 9999,
+    "owe_kind": "unit",
+    "owe_name_prefix": "OWE",
+    "launch_sites": ["LS-North", "LS-East"],
+    "waves": [
+      { "t_offset_min": 0,  "size": 8, "axis": "North", "launch_site": "LS-North", "spacing_s": 20, "altitude_m": 300, "speed_kts": 100 },
+      { "t_offset_min": 5,  "size": 8, "axis": "East",  "launch_site": "LS-East",  "spacing_s": 20, "altitude_m": 300, "speed_kts": 100 },
+      { "t_offset_min": 25, "size": 8, "axis": "North", "launch_site": "LS-North", "spacing_s": 10, "altitude_m": 150, "speed_kts": 100 }
+    ]
+  },
+  "defence": {
+    "side": "Blue",
+    "emcon": "Radar=Active",
+    "gbad": [
+      { "unit": "SHORAD-1", "magazines": { "CAMM": 24 } },
+      { "unit": "SHORAD-2", "magazines": { "CAMM": 24 } },
+      { "unit": "AAA-1",    "magazines": { "35mm AHEAD": 480 } }
+    ],
+    "fdl_rps": ["FDL-1", "FDL-2", "FDL-3", "FDL-4"],
+    "targets": ["TGT-Powerplant", "TGT-Radar", "TGT-HQ"]
+  },
+  "logging": {
+    "out_dir": "C:/owe-demo/results",
+    "snapshot_interval": "15min"
+  },
+  "end": {
+    "t_end_min": 120
+  }
+}
